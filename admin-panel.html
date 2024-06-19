@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="admin-panel">
+        <div class="admin-panel-header">
+            Admin Panel
+        </div>
+        <div id="add_project_div">
+            <h1>Lahiyə əlavə etmək</h1>
+            <div id="project_add">
+                <form id="fileForm" enctype="multipart/form-data">
+                    <input type="file" id="fileInput" name="myfile">
+                    <label for="" class="form_label_">Lahiyənin adı</label>
+                    <input type="text" name="" id="" class="inputs_admin">
+                    <label for="" class="form_label_">Haqqında</label>
+                    <input type="text" name="" id="about_project" class="inputs_admin">
+                    <label for="" class="form_label_">Müştərinin adı</label>
+                    <input type="text" name="" id="" class="inputs_admin">
+                    <label for="" class="form_label_">Memarın adı</label>
+                    <input type="text" name="" id="" class="inputs_admin">
+                    <label for="" class="form_label_">Qurucunun adı</label>
+                    <input type="text" name="" id="" class="inputs_admin">
+                    <label for="" class="form_label_">Büdcə</label>
+                    <input type="text" name="" id="" class="inputs_admin">
+                    <!-- <button type="submit">Отправить</button> -->
+                </form>
+            </div>
+        </div>
+        <h1>Messages</h1>
+        <div class="admin-panel-content">
+            <div id="messageList">
+
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./assets/js/admin-panel.js"></script>
+</body>
+
+</html>

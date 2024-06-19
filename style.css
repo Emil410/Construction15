@@ -267,7 +267,7 @@ img {
     height: auto;
     max-width: 100%;
     vertical-align: middle;
-    -ms-interpolation-mode: bicubic:
+    -ms-interpolation-mode: bicubic;
 }
 
 p {
@@ -307,8 +307,6 @@ blockquote>p:last-child {
 blockquote .small {
     display: inline-block;
 }
-
-blockquote cite {}
 
 blockquote em,
 blockquote i {
@@ -602,11 +600,9 @@ input[type="radio"] {
 
 input[type="search"] {
     -webkit-appearance: textfield;
-    /* Addresses appearance set to searchfield in S5, Chrome */
 }
 
 input[type="search"]::-webkit-search-decoration {
-    /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
     -webkit-appearance: none;
 }
 
@@ -614,18 +610,11 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
-    /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 }
-
-
-/* Remove chrome yellow autofill */
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #f7f7f7 inset
 }
-
-
-/* Reset search styling */
 
 input[type="search"] {
     outline: 0
@@ -639,7 +628,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 
-/* Input normal */
 
 select,
 textarea,
@@ -679,17 +667,11 @@ input[type="color"] {
     transition: border ease .238s;
 }
 
-
-/* For Contact Form 7 */
-
 .wpcf7-form select,
 .wpcf7-form textarea,
 .wpcf7-form input {
     margin-bottom: 0;
 }
-
-
-/* Input focus */
 
 textarea:focus,
 input[type="text"]:focus,
@@ -713,9 +695,6 @@ input[type="color"]:focus {
     box-shadow: none;
 }
 
-
-/* Button */
-
 button,
 input[type="button"],
 input[type="reset"],
@@ -734,8 +713,6 @@ input[type="submit"] {
 }
 
 
-/* Button hover + focus */
-
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -750,8 +727,6 @@ input[type="submit"]:focus {
 }
 
 
-/* Placeholder color */
-
 ::-webkit-input-placeholder {
     color: #c1c1c1;
 }
@@ -763,15 +738,11 @@ input[type="submit"]:focus {
 ::-moz-placeholder {
     color: #c1c1c1;
     opacity: 1;
-    /* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
     color: #c1c1c1;
 }
-
-
-/* Links */
 
 a {
     color: #ffc925;
@@ -789,10 +760,6 @@ a:active {
     color: #252525;
     text-decoration: none
 }
-
-
-/* Typography
--------------------------------------------------------------- */
 
 h1,
 h2,
@@ -814,42 +781,26 @@ h1 {
 }
 
 
-/* 34px */
-
 h2 {
     font-size: 2.142em;
 }
 
-
-/* 30px */
-
 h3 {
     font-size: 1.857em;
 }
-
-
-/* 26px */
 
 h4 {
     font-size: 1.571em;
 }
 
 
-/* 22px */
-
 h5 {
     font-size: 1.285em;
 }
 
-
-/* 18px */
-
 h6 {
     font-size: 1.142em;
 }
-
-
-/* 16px */
 
 h1 a,
 h2 a,
@@ -943,10 +894,6 @@ p.dropcap span.first-letter {
 .construction-icons>span {
     font-size: 40px;
 }
-
-
-/* Extra classes
--------------------------------------------------------------- */
 
 .line-height-normal {
     line-height: normal;
@@ -4482,8 +4429,142 @@ body.page #main-content {
 }
 
 
-/* Media Queries
--------------------------------------------------------------- */
+/* admin panel */
+
+.admin-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.admin-panel-header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.admin-panel-content {
+    display: flex;
+    padding: 20px;
+}
+
+.message-list {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.message-list .message {
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px 0;
+}
+
+.message-list .message:last-child {
+    border-bottom: none;
+}
+
+.message-list .message .message-info {
+    margin-bottom: 10px;
+}
+
+.message-list .message .message-info .message-label {
+    font-weight: bold;
+    color: #343a40;
+    display: inline-block;
+    width: 80px;
+}
+
+.message-list .message .message-info .message-content {
+    color: #6c757d;
+    display: inline-block;
+}
+
+.message {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-info {
+    margin-bottom: 8px;
+}
+
+.message-label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.message-content {
+    color: #333;
+}
+#messageList{
+    display: flex;
+    gap: 20px;
+}
+.admin-panel h1{
+    text-align: center;
+}
+
+#add_project_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+#project_add{
+    width: 40%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-top: 50px;
+}
+#fileForm{
+    padding: 20px;
+}
+.form_label_{
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.inputs_admin{
+    height: 30px!important;
+    margin-bottom: 0px!important;
+}
+#about_project{
+    height: 60px!important;
+    padding: 10px!important;
+    font-size: 20px!important;
+}
+@media only screen and (max-width: 1000px) {
+    #project_add {
+        width: 70%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #project_add {
+        width: 100%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        margin-top: 50px;
+    }
+}
+
 
 @media only screen and (min-width: 1930px) {
     .parallax {
