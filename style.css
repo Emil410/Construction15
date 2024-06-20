@@ -627,8 +627,6 @@ input[type="search"]::-webkit-search-results-decoration {
     display: none
 }
 
-
-
 select,
 textarea,
 input[type="text"],
@@ -712,7 +710,6 @@ input[type="submit"] {
     transition: all ease .238s;
 }
 
-
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -725,7 +722,6 @@ input[type="submit"]:focus {
     background-color: #252525;
     color: #fff;
 }
-
 
 ::-webkit-input-placeholder {
     color: #c1c1c1;
@@ -780,7 +776,6 @@ h1 {
     font-size: 2.428em;
 }
 
-
 h2 {
     font-size: 2.142em;
 }
@@ -792,7 +787,6 @@ h3 {
 h4 {
     font-size: 1.571em;
 }
-
 
 h5 {
     font-size: 1.285em;
@@ -4507,15 +4501,17 @@ body.page #main-content {
 .message-content {
     color: #333;
 }
-#messageList{
+
+#messageList {
     display: flex;
     gap: 20px;
 }
-.admin-panel h1{
+
+.admin-panel h1 {
     text-align: center;
 }
 
-#add_project_div{
+#add_project_div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -4524,30 +4520,45 @@ body.page #main-content {
     padding: 20px;
 }
 
-#project_add{
+#project_add {
     width: 40%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     margin-top: 50px;
 }
-#fileForm{
+
+#fileForm {
     padding: 20px;
 }
-.form_label_{
+
+.form_label_ {
     font-size: 20px;
     color: black;
     font-weight: 600;
     margin-top: 20px;
 }
-.inputs_admin{
+
+.inputs_admin {
     height: 30px!important;
     margin-bottom: 0px!important;
 }
-#about_project{
+
+#about_project {
     height: 60px!important;
     padding: 10px!important;
     font-size: 20px!important;
 }
+
+#preview {
+    display: none;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#fileForm button {
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 1000px) {
     #project_add {
         width: 70%;
@@ -4556,6 +4567,7 @@ body.page #main-content {
         margin-top: 50px;
     }
 }
+
 @media only screen and (max-width: 500px) {
     #project_add {
         width: 100%;
@@ -4564,7 +4576,6 @@ body.page #main-content {
         margin-top: 50px;
     }
 }
-
 
 @media only screen and (min-width: 1930px) {
     .parallax {
