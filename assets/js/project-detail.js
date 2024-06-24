@@ -17,18 +17,27 @@ const db = getDatabase(app);
 const storage = getStorage(app);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const projectId = window.location.pathname.split('/').pop();
+    const projectId = sanitizePath(window.location.pathname.split('/').pop());
+    console.log('Current projectId:', projectId);
 
     const projectRef = ref(db, 'projects/' + projectId);
+
     onValue(projectRef, (snapshot) => {
         const projectData = snapshot.val();
         if (projectData) {
+            console.log('Project data found:', projectData);
             displayProjectData(projectData);
+        } else {
+            console.error('No project data found for projectId:', projectId);
         }
     }, (error) => {
-        console.error('Error:', error);
+        console.error('Error fetching project data:', error);
     });
 });
+
+function sanitizePath(path) {
+    return path.replace(/[.#$[\]]/g, '_');
+}
 
 function displayProjectData(projectData) {
     const projectNameElem = document.getElementById('projectName');
@@ -48,14 +57,16 @@ function displayProjectData(projectData) {
         `;
     }
 
-    if (projectImageElem) {
+    if (projectImageElem && projectData.imageUrl) {
         const imageRef = storageRef(storage, projectData.imageUrl);
         getDownloadURL(imageRef)
             .then((url) => {
                 projectImageElem.src = url;
             })
             .catch((error) => {
-                console.error('Error', error);
+                console.error('Error fetching image URL:', error);
             });
+    } else {
+        console.error('No image URL found in project data:', projectData);
     }
 }
