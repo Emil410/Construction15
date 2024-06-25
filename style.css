@@ -4891,3 +4891,12 @@ only screen and ( min-resolution: 2dppx) {
         background-size: 10px 24px;
     }
 }
+
+#projects .cbp-item{
+    aspect-ratio: 38/26;
+    overflow: hidden;
+}
+#projects img{
+    aspect-ratio: 38/26;
+    object-fit: cover;
+}
